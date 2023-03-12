@@ -1,0 +1,28 @@
+version: "3"
+services:
+  tiktok:
+    image: kylin20200921/tools:TikTokWeb
+    restart: always
+    container_name: TikTok
+    ports:
+      - "4000:4000"
+    networks:
+      - kylin
+      
+  alist:
+    image: kylin20200921/alist
+    container_name: alist
+    volumes:
+      - "${WORK_PATH:-.}/alist:/opt/alist/data"
+    ports:
+      - "5244:5244"
+    networks:
+      - kylin
+
+networks:
+  kylin:
+    ipam:
+      driver: default
+      config:
+        - subnet: "192.168.0.0/24"
+
