@@ -23,7 +23,7 @@ services:
     image: kylin20200921/alist
     container_name: edu
     volumes:
-      - "${WORK_PATH:-.}/alist:/opt/edu/data"
+      - "${WORK_PATH:-.}/edu:/opt/alist/data"
     ports:
       - "5245:5244"
     networks:
