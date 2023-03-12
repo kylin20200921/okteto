@@ -25,7 +25,7 @@ services:
     volumes:
       - "${WORK_PATH:-.}/alist:/opt/edu/data"
     ports:
-      - "5244:5244"
+      - "5245:5244"
     networks:
       - kylin
 
