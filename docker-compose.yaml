@@ -8,7 +8,25 @@ services:
       - "4000:4000"
     networks:
       - kylin
-  
+      
+  alist:
+    image: kylin20200921/alist
+    container_name: alist
+    volumes:
+      - "${WORK_PATH:-.}/alist:/opt/alist/data"
+    ports:
+      - "5244:5244"
+    networks:
+      - kylin
+
+  whistle:
+    image: kylin20200921/whistle
+    restart: always
+    container_name: whistle
+    ports:
+      - "8899:8899"
+    networks:
+      - kylin
 
 networks:
   kylin:
