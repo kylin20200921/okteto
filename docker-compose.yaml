@@ -19,12 +19,12 @@ services:
     networks:
       - kylin
 
-  whistle:
-    image: kylin20200921/whistle
+  meilisearch:
+    image: kylin20200921/meilisearch
     restart: always
-    container_name: whistle
+    container_name: meilisearch
     ports:
-      - "8899:8899"
+      - "7700:7700"
     networks:
       - kylin
 
